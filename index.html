@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Round Robin - Dark Glam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simulador Round Robin</h1>
+            <p>Algoritmo de planificación de procesos - Fácil de Entender</p>
+        </header>
+
+        <section id="input-section">
+            <h2>Ingreso de Procesos</h2>
+            <p class="explanation">Agrega procesos manualmente o carga ejemplos predefinidos. Cada proceso tiene un nombre y un tiempo de ejecución (burst time).</p>
+            <div id="process-list"></div>
+            <button id="add-process">Agregar Proceso</button>
+            <button id="load-example">Cargar Ejemplos</button>
+        </section>
+
+        <section id="config-section">
+            <h2>Configuración</h2>
+            <p class="explanation">Define el quantum: tiempo máximo que un proceso puede usar la CPU antes de ser interrumpido.</p>
+            <label for="quantum">Quantum (S):</label>
+            <input type="number" id="quantum" value="2" min="1">
+        </section>
+
+        <section id="simulation-section">
+            <h2>Simulación</h2>
+            <p class="explanation">Inicia la simulación automática o usa el modo paso a paso para ver cada cambio manualmente.</p>
+            <button id="start-sim"><i class="fas fa-play"></i> Iniciar Simulación</button>
+            <button id="init-step-sim"><i class="fas fa-step-forward"></i> Iniciar Modo Paso a Paso</button>
+            <button id="next-step" disabled><i class="fas fa-forward"></i> Siguiente Paso</button>
+            <button id="reset-sim"><i class="fas fa-redo"></i> Reiniciar</button>
+        </section>
+
+        <section id="visualization-section">
+            <h2>Visualización</h2>
+            <p class="explanation">Observa el estado de la CPU y la cola de procesos esperando.</p>
+            <div id="cpu-visual">
+                <div id="cpu-display">CPU: Idle</div>
+                <div id="process-queue"></div>
+            </div>
+        </section>
+
+        <section id="gantt-section">
+            <h2>Diagrama de Gantt</h2>
+            <p class="explanation">Muestra cada periodo de ejecución de los procesos en orden cronológico. Cada barra horizontal indica un proceso y su duración exacta en segundos durante ese turno.</p>
+            <canvas id="gantt-chart"></canvas>
+        </section>
+
+        <section id="results-section">
+            <h2>Resultados</h2>
+            <p class="explanation">Tabla con métricas finales: tiempo de ejecución original, tiempo de espera y tiempo de retorno para cada proceso.</p>
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>Tiempo de Ejecución (S)</th>
+                        <th>Tiempo de Espera (S)</th>
+                        <th>Tiempo de Retorno (S)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
