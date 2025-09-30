@@ -1,25 +1,15 @@
-/* Estilo Moderno y Dinámico - UI/UX Mejorada 2025 */
+/* Estilo Futurista Premium - 2025 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
 :root {
     --primary: #6C63FF;
     --secondary: #00E676;
     --accent: #FF6B6B;
-    --background: #0F172A;
-    --surface: #1E293B;
+    --background: #0A0F1E;
+    --surface: rgba(20, 25, 40, 0.85);
     --text: #F8FAFC;
     --text-secondary: #94A3B8;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    --glow: 0 0 20px rgba(108, 99, 255, 0.6), 0 0 40px rgba(0, 230, 118, 0.4);
 }
 
 body {
@@ -30,64 +20,33 @@ body {
     padding: 20px;
     line-height: 1.8;
     font-size: 18px;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(0, 230, 118, 0.15) 0%, transparent 50%);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0, 230, 118, 0.2) 0%, transparent 50%);
 }
 
+/* Contenedor principal */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     background: var(--surface);
-    border: none;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
     animation: fadeIn 0.8s ease-out;
 }
 
-.instructions {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--text);
-    padding: 20px;
-    background: rgba(108, 99, 255, 0.1);
-    border-radius: 12px;
-    margin: 20px 0;
-    border: 1px solid rgba(108, 99, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.instructions:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.1);
-    background: rgba(108, 99, 255, 0.15);
-}
-
+/* Títulos */
 header {
     text-align: center;
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     position: relative;
 }
 
-header::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 100px;
-    height: 4px;
-    background: var(--secondary);
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
 h1 {
-    font-size: 3em;
+    font-size: 3.2em;
     margin: 0;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
@@ -95,299 +54,158 @@ h1 {
     color: transparent;
     font-weight: 800;
     letter-spacing: -1px;
-    transition: transform 0.3s ease;
+    text-shadow: var(--glow);
+    animation: pulse 3s infinite;
 }
 
-h1:hover {
-    transform: scale(1.02);
-}
-
-p {
-    font-size: 1.1rem;
-    margin: 1rem 0;
-    line-height: 1.8;
-}
-
-.highlight-text {
+header p {
     font-size: 1.2rem;
-    color: var(--secondary);
-    font-weight: 600;
-    text-shadow: 0 0 20px rgba(0, 230, 118, 0.2);
+    color: var(--text-secondary);
+    margin-top: 10px;
 }
 
-h2 {
-    color: #800080;
-    font-size: 1.3em;
-    font-weight: 700;
-    margin-top: 35px;
-    margin-bottom: 10px;
-}
-
+/* Secciones */
 section {
-    margin-bottom: 25px;
-    padding: 20px;
-    background: #111;
-    border: 2px solid #800080;
-    border-radius: 8px;
-    border-left: 5px solid #FFD700;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(108, 99, 255, 0.25);
+}
+
+/* Botones */
 button {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--text);
     border: none;
-    padding: 12px 24px;
+    padding: 14px 28px;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    margin: 5px;
-    border-radius: 12px;
+    margin: 6px;
+    border-radius: 14px;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-button:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.2),
-        transparent
-    );
-    transition: 0.5s;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
-    animation: pulse 1s ease infinite;
-}
-
-button:hover:before {
-    left: 100%;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--glow);
 }
 
 button:active {
-    transform: translateY(0);
+    transform: scale(0.98);
 }
 
-button:disabled {
-    background: var(--surface);
-    color: var(--text-secondary);
-    cursor: not-allowed;
-    box-shadow: none;
-}
-
+/* Inputs */
 input {
-    background: #000;
+    background: rgba(15, 20, 35, 0.8);
     color: #FFD700;
-    border: 2px solid #800080;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    border-radius: 4px;
-    width: 100px;
-    transition: border-color 0.2s ease;
+    border: 2px solid var(--primary);
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 input:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 12px var(--secondary);
     outline: none;
-    border-color: #FFD700;
-    box-shadow: 0 0 5px #FFD700;
 }
 
-label {
-    margin-right: 10px;
-    font-weight: 700;
-    color: #FFD700;
-}
-
-#process-list {
-    margin-bottom: 15px;
-}
-
-.process-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    background: rgba(30, 41, 59, 0.8);
-    padding: 20px;
-    border: 1px solid rgba(108, 99, 255, 0.2);
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    transition: all 0.3s ease;
-    animation: fadeIn 0.5s ease-out;
-    font-size: 1.1rem;
-}
-
-.process-item:nth-child(odd) {
-    animation-delay: 0.2s;
-}
-
-.process-item:nth-child(even) {
-    animation-delay: 0.4s;
-}
-
-.process-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.2);
-}
-
-.process-item span {
-    font-weight: 600;
-    color: var(--text);
-    font-size: 1.1em;
-}
-
-.process-item input {
-    margin-left: 15px;
-    width: 100px;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(108, 99, 255, 0.3);
-    color: var(--text);
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.process-item input:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
-}
-
-.remove-process {
-    margin-left: 15px;
-    background: #800080;
-    color: #FFD700;
-    border-color: #FFD700;
-}
-
-.remove-process:hover {
-    background: #A000A0;
-}
-
+/* CPU y Cola de Procesos */
 #cpu-visual {
-    border: 2px solid #FFD700;
-    padding: 20px;
+    border: 2px solid var(--primary);
+    padding: 25px;
     margin: 20px 0;
-    background: #111;
+    background: rgba(15, 20, 35, 0.9);
+    border-radius: 14px;
     text-align: center;
-    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
 #cpu-display {
-    font-size: 1.1em;
-    margin-bottom: 10px;
+    font-size: 1.3em;
     font-weight: 700;
     color: #FFD700;
-}
-
-#process-queue {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #FFD700;
 }
 
 .process-block {
-    border: 1px solid #FFD700;
-    padding: 10px;
-    margin: 5px;
-    background: #000;
-    min-width: 60px;
+    border: 1px solid var(--secondary);
+    padding: 12px;
+    margin: 6px;
+    background: rgba(0, 230, 118, 0.1);
+    min-width: 70px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 8px;
     font-weight: 700;
-    color: #FFD700;
+    color: var(--secondary);
+    transition: transform 0.3s ease;
 }
 
+.process-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--secondary);
+}
+
+/* Gantt Chart */
 #gantt-chart {
-    max-width: 100%;
-    height: 350px;
+    width: 100%;
+    height: 380px;
     margin-top: 20px;
-    border: 1px solid #800080;
-    background: #000;
-    border-radius: 6px;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    background: rgba(15, 15, 15, 0.9);
 }
 
+/* Tabla */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background: #111;
-    border: 1px solid #FFD700;
-    border-radius: 6px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #800080;
-    padding: 12px;
+    padding: 14px;
     text-align: center;
 }
 
 th {
-    background: #FFD700;
-    color: #000;
+    background: var(--primary);
+    color: white;
     font-weight: 700;
+    font-size: 1rem;
 }
 
-tr:nth-child(even) {
-    background: #222;
+td {
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-tr:hover {
-    background: #333;
+tr:hover td {
+    background: rgba(108, 99, 255, 0.1);
 }
 
-/* Explicaciones mejoradas */
-.explanation {
-    font-size: 12px;
-    color: #800080;
-    margin-top: 8px;
-    font-style: italic;
-    background: #111;
-    padding: 8px;
-    border-radius: 4px;
-    border-left: 3px solid #FFD700;
-}
-
-/* Responsividad */
+/* Responsivo */
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-    h1 {
-        font-size: 1.8em;
-    }
-    section {
-        padding: 15px;
-    }
-    .process-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .process-item input {
-        margin-left: 0;
-        margin-top: 5px;
-    }
-    table {
-        font-size: 12px;
-    }
-    th, td {
-        padding: 8px;
-    }
-    button {
-        padding: 10px 14px;
-        font-size: 12px;
-    }
+    .container { padding: 20px; }
+    h1 { font-size: 2em; }
+    button { font-size: 13px; padding: 10px 16px; }
+    table { font-size: 13px; }
 }

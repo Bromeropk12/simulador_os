@@ -81,6 +81,7 @@ function resetSimulation() {
     cpuDisplay.textContent = 'CPU: Idle';
     processQueue.innerHTML = '';
     resultsTable.innerHTML = '';
+    document.getElementById('execution-log').innerHTML = '';
     if (ganttChart) {
         ganttChart.destroy();
     }
@@ -200,6 +201,15 @@ function nextStepSimulation() {
 function animateExecution(processName, duration) {
     cpuDisplay.textContent = `CPU: Ejecutando ${processName}`;
     cpuDisplay.style.color = '#FFA500';
+    
+    // Agregar entrada al log
+    const logEntry = document.createElement('div');
+    logEntry.className = 'log-entry';
+    logEntry.textContent = `Proceso ${processName} ejecutándose durante ${duration} segundos`;
+    
+    const executionLog = document.getElementById('execution-log');
+    executionLog.appendChild(logEntry);
+    executionLog.scrollTop = executionLog.scrollHeight; // Auto-scroll al final
     
     // Animación con Anime.js
     anime({
